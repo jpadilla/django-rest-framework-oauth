@@ -20,46 +20,11 @@ Install using `pip`...
 $ pip install djangorestframework-oauth
 ```
 
-## Testing
+## Documentation & Support
 
-Install testing requirements.
+Full documentation for the project is available at http://jpadilla.github.io/django-rest-framework-oauth/.
 
-```bash
-$ pip install -r requirements-test.txt
-```
-
-Run with runtests.
-
-```bash
-$ ./runtests.py
-```
-
-You can also use the excellent [tox](http://tox.readthedocs.org/en/latest/) testing tool to run the tests against all supported versions of Python and Django. Install tox globally, and then simply run:
-
-```bash
-$ tox
-```
-
-## Documentation
-
-To build the documentation, you'll need to install `mkdocs`.
-
-```bash
-$ pip install mkdocs
-```
-
-To preview the documentation:
-
-```bash
-$ mkdocs serve
-Running at: http://127.0.0.1:8000/
-```
-
-To build the documentation:
-
-```bash
-$ mkdocs build
-```
+You may also want to follow the [author][jpadilla] on Twitter.
 
 [build-status-image]: https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master
 [travis]: http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master
@@ -68,4 +33,5 @@ $ mkdocs build
 [oauth-authentication]: authentication.md#oauthauthentication
 [oauth2-authentication]: authentication.md#oauth2authentication
 [token-has-read-write-scope]: permissions.md#tokenhasreadwritescope
+[jpadilla]: https://twitter.com/jpadilla_
 
