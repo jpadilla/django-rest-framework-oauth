@@ -1,0 +1,4 @@
+site_name: djangorestframework-oauth
+site_description: OAuth support for Django REST Framework
+repo_url: https://github.com/jpadilla/django-rest-framework-oauth
+site_dir: html
