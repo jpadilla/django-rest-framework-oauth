@@ -61,8 +61,7 @@ To build the documentation:
 $ mkdocs build
 ```
 
-
 [build-status-image]: https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master
 [travis]: http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master
-[pypi-version]: https://pypip.in/version/django-rest-framework-oauth/badge.svg
-[pypi]: https://pypi.python.org/pypi/django-rest-framework-oauth
+[pypi-version]: https://pypip.in/version/djangorestframework-oauth/badge.svg
+[pypi]: https://pypi.python.org/pypi/djangorestframework-oauth

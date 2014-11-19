@@ -1,8 +1,12 @@
 # djangorestframework-oauth
 
 <div class="badges">
-    <img src="https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master">
-    <img src="http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master">
+    <a href="http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master">
+        <img src="https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master">
+    </a>
+    <a href="https://pypi.python.org/pypi/djangorestframework-oauth">
+        <img src="https://pypip.in/version/djangorestframework-oauth/badge.svg">
+    </a>
 </div>
 
 ## Overview
@@ -22,8 +26,6 @@ Install using `pip`...
 $ pip install djangorestframework-oauth
 ```
 
-[pypi-version]: https://pypip.in/version/django-rest-framework-oauth/badge.svg
-[pypi]: https://pypi.python.org/pypi/django-rest-framework-oauth
 [oauth-authentication]: authentication.md#oauthauthentication
 [oauth2-authentication]: authentication.md#oauth2authentication
 [token-has-read-write-scope]: permissions.md#tokenhasreadwritescope
