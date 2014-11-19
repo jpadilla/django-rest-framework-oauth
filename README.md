@@ -5,7 +5,7 @@
 
 ## Overview
 
-OAuth support for Django REST Framework
+OAuth support for Django REST Framework. Provides two authentication classes: [OAuthAuthentication][oauth-authentication] and [OAuth2Authentication][oauth2-authentication] and a [TokenHasReadWriteScope][token-has-read-write-scope] permission class
 
 ## Requirements
 
@@ -65,3 +65,7 @@ $ mkdocs build
 [travis]: http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master
 [pypi-version]: https://pypip.in/version/djangorestframework-oauth/badge.svg
 [pypi]: https://pypi.python.org/pypi/djangorestframework-oauth
+[oauth-authentication]: authentication.md#oauthauthentication
+[oauth2-authentication]: authentication.md#oauth2authentication
+[token-has-read-write-scope]: permissions.md#tokenhasreadwritescope
+
