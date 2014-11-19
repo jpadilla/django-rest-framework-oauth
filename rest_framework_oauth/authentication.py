@@ -57,7 +57,7 @@ class OAuthAuthentication(BaseAuthentication):
 
         if missing:
             # OAuth was attempted but missing parameters.
-            msg = 'Missing parameters: {}'.format(', '.join(missing))
+            msg = 'Missing parameters: %s' % (', '.join(missing))
             raise exceptions.AuthenticationFailed(msg)
 
         if not self.check_nonce(request, oauth_request):
@@ -68,7 +68,7 @@ class OAuthAuthentication(BaseAuthentication):
             consumer_key = oauth_request.get_parameter('oauth_consumer_key')
             consumer = oauth_provider_store.get_consumer(request, oauth_request, consumer_key)
         except oauth_provider.store.InvalidConsumerError:
-            msg = 'Invalid consumer token: {}'.format(oauth_request.get_parameter('oauth_consumer_key'))
+            msg = 'Invalid consumer token: %s' % oauth_request.get_parameter('oauth_consumer_key')
             raise exceptions.AuthenticationFailed(msg)
 
         if consumer.status != oauth_provider.consts.ACCEPTED:
@@ -79,7 +79,7 @@ class OAuthAuthentication(BaseAuthentication):
             token_param = oauth_request.get_parameter('oauth_token')
             token = oauth_provider_store.get_access_token(request, oauth_request, consumer, token_param)
         except oauth_provider.store.InvalidTokenError:
-            msg = 'Invalid access token: {}'.format(oauth_request.get_parameter('oauth_token'))
+            msg = 'Invalid access token: %s' % oauth_request.get_parameter('oauth_token')
             raise exceptions.AuthenticationFailed(msg)
 
         try:
@@ -100,7 +100,7 @@ class OAuthAuthentication(BaseAuthentication):
         If permission is denied, return a '401 Unauthorized' response,
         with an appropraite 'WWW-Authenticate' header.
         """
-        return 'OAuth realm="{}"'.format(self.www_authenticate_realm)
+        return 'OAuth realm="%s"' % self.www_authenticate_realm
 
     def validate_token(self, request, consumer, token):
         """
@@ -148,7 +148,6 @@ class OAuth2Authentication(BaseAuthentication):
             msg = 'Invalid bearer header. Token string should not contain spaces.'
             raise exceptions.AuthenticationFailed(msg)
 
-        print(self.allow_query_params_token)
         if auth and auth[0].lower() == b'bearer':
             access_token = auth[1]
         elif 'access_token' in request.POST:
@@ -176,7 +175,7 @@ class OAuth2Authentication(BaseAuthentication):
         user = token.user
 
         if not user.is_active:
-            msg = 'User inactive or deleted: {}'.format(user.get_username())
+            msg = 'User inactive or deleted: %s' % user.get_username()
             raise exceptions.AuthenticationFailed(msg)
 
         return (user, token)
@@ -186,4 +185,4 @@ class OAuth2Authentication(BaseAuthentication):
         Bearer is the only finalized type currently
         Check details on the `OAuth2Authentication.authenticate` method
         """
-        return 'Bearer realm="{}"'.format(self.www_authenticate_realm)
+        return 'Bearer realm="%s"' % self.www_authenticate_realm
