@@ -2,6 +2,8 @@ language: python
 
 python: 2.7
 
+sudo: false
+
 env:
     - TOX_ENV=flake8
     - TOX_ENV=py2.7-django1.7
