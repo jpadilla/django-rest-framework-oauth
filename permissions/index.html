@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+        <title>Permissions - djangorestframework-oauth</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../style.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">djangorestframework-oauth</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../authentication">Authentication</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href=".">Permissions</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li >
+                    <a rel="next" href="../authentication">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a rel="prev" >
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/jpadilla/django-rest-framework-oauth">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#permissions">Permissions</a></li>
+        
+            <li><a href="#tokenhasreadwritescope">TokenHasReadWriteScope</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+<div class="source-links">
+
+    <span class="label label-primary">permissions.py</span>
+
+</div>
+
+
+<h1 id="permissions">Permissions</h1>
+<h2 id="tokenhasreadwritescope">TokenHasReadWriteScope</h2>
+<p>This permission class is intended for use with either of the <code>OAuthAuthentication</code> and <code>OAuth2Authentication</code> classes, and ties into the scoping that their backends provide.</p>
+<p>Requests with a safe methods of <code>GET</code>, <code>OPTIONS</code> or <code>HEAD</code> will be allowed if the authenticated token has read permission.</p>
+<p>Requests for <code>POST</code>, <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code> will be allowed if the authenticated token has write permission.</p>
+<p>This permission class relies on the implementations of the <a href="http://code.larlet.fr/django-oauth-plus">django-oauth-plus</a> and <a href="https://github.com/caffeinehit/django-oauth2-provider">django-oauth2-provider</a> libraries, which both provide limited support for controlling the scope of access tokens:</p>
+<ul>
+<li><code>django-oauth-plus</code>: Tokens are associated with a <code>Resource</code> class which has a <code>name</code>, <code>url</code> and <code>is_readonly</code> properties.</li>
+<li><code>django-oauth2-provider</code>: Tokens are associated with a bitwise <code>scope</code> attribute, that defaults to providing bitwise values for <code>read</code> and/or <code>write</code>.</li>
+</ul>
+<p>If you require more advanced scoping for your API, such as restricting tokens to accessing a subset of functionality of your API then you will need to provide a custom permission class.  See the source of the <code>django-oauth-plus</code> or <code>django-oauth2-provider</code> package for more details on scoping token access.</p>
+</div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/prettify-1.0.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>
