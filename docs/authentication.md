@@ -97,10 +97,6 @@ The command line to test the authentication looks like:
 
     curl -H "Authorization: Bearer <your-access-token>" http://localhost:8000/api/
 
-### Alternative OAuth 2 implementations
-
-Note that [Django OAuth Toolkit][django-oauth-toolkit] is an alternative external package that also includes OAuth 2.0 support for REST framework.
-
 [oauth-1.0a]: http://oauth.net/core/1.0a
 [django-oauth-plus]: http://code.larlet.fr/django-oauth-plus
 [django-oauth2-provider]: https://github.com/caffeinehit/django-oauth2-provider
