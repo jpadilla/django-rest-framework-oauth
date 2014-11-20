@@ -113,6 +113,12 @@
         
             <li><a href="#installation">Installation</a></li>
         
+            <li><a href="#documentation-support">Documentation &amp; Support</a></li>
+        
+            <li><a href="#testing">Testing</a></li>
+        
+            <li><a href="#documentation">Documentation</a></li>
+        
     
     </ul>
 </div></div>
@@ -129,7 +135,8 @@
 </div>
 
 <h2 id="overview">Overview</h2>
-<p>OAuth support for Django REST Framework. Provides two authentication classes: <a href="authentication/#oauthauthentication">OAuthAuthentication</a> and <a href="authentication/#oauth2authentication">OAuth2Authentication</a> and a <a href="permissions/#tokenhasreadwritescope">TokenHasReadWriteScope</a> permission class</p>
+<p>OAuth support extracted as a third party package directly from the official Django REST Framework implementation. It's built using the <a href="http://code.larlet.fr/django-oauth-plus/wiki/Home">django-oauth-plus</a> and <a href="http://django-oauth2-provider.readthedocs.org/">django-oauth2-provider</a> packages.</p>
+<p>This package provides two authentication classes: <a href="authentication/#oauthauthentication">OAuthAuthentication</a> and <a href="authentication/#oauth2authentication">OAuth2Authentication</a> and a <a href="permissions/#tokenhasreadwritescope">TokenHasReadWriteScope</a> permission class.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Python (2.6.5+, 2.7)</li>
@@ -138,6 +145,36 @@
 <h2 id="installation">Installation</h2>
 <p>Install using <code>pip</code>...</p>
 <pre><code class="bash">$ pip install djangorestframework-oauth
+</code></pre>
+
+<h2 id="documentation-support">Documentation &amp; Support</h2>
+<p>Full documentation for the project is available at http://jpadilla.github.io/django-rest-framework-oauth/.</p>
+<p>You may also want to follow the <a href="https://twitter.com/jpadilla_">author</a> on Twitter.</p>
+<h2 id="testing">Testing</h2>
+<p>Install testing requirements.</p>
+<pre><code class="bash">$ pip install -r requirements-test.txt
+</code></pre>
+
+<p>Run with runtests.</p>
+<pre><code class="bash">$ ./runtests.py
+</code></pre>
+
+<p>You can also use the excellent <a href="http://tox.readthedocs.org/en/latest/">tox</a> testing tool to run the tests against all supported versions of Python and Django. Install tox globally, and then simply run:</p>
+<pre><code class="bash">$ tox
+</code></pre>
+
+<h2 id="documentation">Documentation</h2>
+<p>To build the documentation, you'll need to install <code>mkdocs</code>.</p>
+<pre><code class="bash">$ pip install mkdocs
+</code></pre>
+
+<p>To preview the documentation:</p>
+<pre><code class="bash">$ mkdocs serve
+Running at: http://127.0.0.1:8000/
+</code></pre>
+
+<p>To build the documentation:</p>
+<pre><code class="bash">$ mkdocs build
 </code></pre>
 
 </div>
