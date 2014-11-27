@@ -1,4 +1,4 @@
-# djangorestframework-oauth
+# REST Framework OAuth
 
 [![build-status-image]][travis]
 [![pypi-version]][pypi]
