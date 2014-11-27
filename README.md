@@ -35,8 +35,8 @@ You may also want to follow the [author][jpadilla] on Twitter.
 [pypi]: https://pypi.python.org/pypi/djangorestframework-oauth
 [django-oauth-plus]: http://code.larlet.fr/django-oauth-plus/wiki/Home
 [django-oauth2-provider]: http://django-oauth2-provider.readthedocs.org/
-[oauth-authentication]: authentication.md#oauthauthentication
-[oauth2-authentication]: authentication.md#oauth2authentication
-[token-has-read-write-scope]: permissions.md#tokenhasreadwritescope
+[oauth-authentication]: http://jpadilla.github.io/django-rest-framework-oauth/authentication/#oauthauthentication
+[oauth2-authentication]: http://jpadilla.github.io/django-rest-framework-oauth/authentication/#oauth2authentication
+[token-has-read-write-scope]: http://jpadilla.github.io/django-rest-framework-oauth/permissions/#tokenhasreadwritescope
 [jpadilla]: https://twitter.com/jpadilla_
 
