@@ -11,8 +11,9 @@ This package provides two authentication classes: [OAuthAuthentication][oauth-au
 
 ## Requirements
 
-* Python (2.6.5+, 2.7)
-* Django (1.4.11+, 1.5.5+, 1.6, 1.7)
+* Python 2.7
+* Django (1.6, 1.7)
+* Django REST Framework (2.4.3, 2.4.4, 3.0-beta)
 
 ## Installation
 
