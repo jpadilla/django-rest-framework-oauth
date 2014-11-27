@@ -1,5 +1,3 @@
-# djangorestframework-oauth
-
 <div class="badges">
     <a href="http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master">
         <img src="https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master">
@@ -8,6 +6,14 @@
         <img src="https://pypip.in/version/djangorestframework-oauth/badge.svg">
     </a>
 </div>
+
+---
+
+# REST Framework OAuth
+
+OAuth support for Django REST Framework
+
+---
 
 ## Overview
 
