@@ -15,7 +15,7 @@
         <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="./css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./style.css" rel="stylesheet">
+        <link href="./extra.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -105,7 +105,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#djangorestframework-oauth">djangorestframework-oauth</a></li>
+        <li class="main active"><a href="#rest-framework-oauth">REST Framework OAuth</a></li>
         
             <li><a href="#overview">Overview</a></li>
         
@@ -124,7 +124,6 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="djangorestframework-oauth">djangorestframework-oauth</h1>
 <div class="badges">
     <a href="http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master">
         <img src="https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master">
@@ -134,6 +133,10 @@
     </a>
 </div>
 
+<hr />
+<h1 id="rest-framework-oauth">REST Framework OAuth</h1>
+<p>OAuth support for Django REST Framework</p>
+<hr />
 <h2 id="overview">Overview</h2>
 <p>OAuth support extracted as a third party package directly from the official Django REST Framework implementation. It's built using the <a href="http://code.larlet.fr/django-oauth-plus/wiki/Home">django-oauth-plus</a> and <a href="http://django-oauth2-provider.readthedocs.org/">django-oauth2-provider</a> packages.</p>
 <p>This package provides two authentication classes: <a href="authentication/#oauthauthentication">OAuthAuthentication</a> and <a href="authentication/#oauth2authentication">OAuth2Authentication</a> and a <a href="permissions/#tokenhasreadwritescope">TokenHasReadWriteScope</a> permission class.</p>
