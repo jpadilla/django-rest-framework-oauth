@@ -3,6 +3,10 @@
 [![build-status-image]][travis]
 [![pypi-version]][pypi]
 
+**OAuth support for Django REST Framework**
+
+Full documentation for the project is available at [http://jpadilla.github.io/django-rest-framework-oauth][docs].
+
 ## Overview
 
 OAuth support extracted as a third party package directly from the official Django REST Framework implementation. It's built using the [django-oauth-plus][django-oauth-plus] and [django-oauth2-provider][django-oauth2-provider] packages.
@@ -25,7 +29,7 @@ $ pip install djangorestframework-oauth
 
 ## Documentation & Support
 
-Full documentation for the project is available at http://jpadilla.github.io/django-rest-framework-oauth/.
+Full documentation for the project is available at [http://jpadilla.github.io/django-rest-framework-oauth][docs].
 
 You may also want to follow the [author][jpadilla] on Twitter.
 
@@ -38,5 +42,6 @@ You may also want to follow the [author][jpadilla] on Twitter.
 [oauth-authentication]: http://jpadilla.github.io/django-rest-framework-oauth/authentication/#oauthauthentication
 [oauth2-authentication]: http://jpadilla.github.io/django-rest-framework-oauth/authentication/#oauth2authentication
 [token-has-read-write-scope]: http://jpadilla.github.io/django-rest-framework-oauth/permissions/#tokenhasreadwritescope
+[docs]: http://jpadilla.github.io/django-rest-framework-oauth
 [jpadilla]: https://twitter.com/jpadilla_
 
