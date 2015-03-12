@@ -8,8 +8,9 @@ from django.conf import settings
 
 from rest_framework import exceptions
 from rest_framework.authentication import get_authorization_header, BaseAuthentication
-from compat import oauth, oauth_provider, oauth_provider_store
-from compat import oauth2_provider, provider_now, check_nonce
+
+from .compat import oauth, oauth_provider, oauth_provider_store
+from .compat import oauth2_provider, provider_now, check_nonce
 
 
 class OAuthAuthentication(BaseAuthentication):
