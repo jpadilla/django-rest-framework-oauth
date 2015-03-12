@@ -9,7 +9,9 @@ from django.test import TestCase
 from django.utils import unittest
 from django.utils.http import urlencode
 
-from rest_framework import status, permissions
+from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_oauth import permissions
 from rest_framework_oauth.authentication import OAuthAuthentication, OAuth2Authentication
 from rest_framework_oauth.compat import oauth2_provider, oauth2_provider_scope
 from rest_framework_oauth.compat import oauth, oauth_provider
@@ -21,7 +23,7 @@ factory = APIRequestFactory()
 
 
 class MockView(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         return HttpResponse({'a': 1, 'b': 2, 'c': 3})
