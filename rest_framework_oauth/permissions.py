@@ -4,7 +4,8 @@ Provides permission policies for OAuth.
 from __future__ import unicode_literals
 
 from rest_framework.permissions import SAFE_METHODS, BasePermission
-from rest_framework.compat import oauth2_provider_scope, oauth2_constants
+
+from .compat import oauth2_provider_scope, oauth2_constants
 
 
 class TokenHasReadWriteScope(BasePermission):
