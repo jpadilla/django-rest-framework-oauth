@@ -3,7 +3,7 @@
         <img src="https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master">
     </a>
     <a href="https://pypi.python.org/pypi/djangorestframework-oauth">
-        <img src="https://pypip.in/version/djangorestframework-oauth/badge.svg">
+        <img src="https://img.shields.io/pypi/v/djangorestframework-oauth.svg">
     </a>
 </div>
 

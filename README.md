@@ -35,7 +35,7 @@ You may also want to follow the [author][jpadilla] on Twitter.
 
 [build-status-image]: https://secure.travis-ci.org/jpadilla/django-rest-framework-oauth.png?branch=master
 [travis]: http://travis-ci.org/jpadilla/django-rest-framework-oauth?branch=master
-[pypi-version]: https://pypip.in/version/djangorestframework-oauth/badge.svg
+[pypi-version]: https://img.shields.io/pypi/v/djangorestframework-oauth.svg
 [pypi]: https://pypi.python.org/pypi/djangorestframework-oauth
 [django-oauth-plus]: http://code.larlet.fr/django-oauth-plus/wiki/Home
 [django-oauth2-provider]: http://django-oauth2-provider.readthedocs.org/
