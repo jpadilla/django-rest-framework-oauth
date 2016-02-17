@@ -1,6 +1,9 @@
-Django>=1.6
+Django>=1.6,<1.8
 djangorestframework>=2.4.3
+django-oauth-plus>=2.2.1
+django-oauth2-provider>=0.2.4
+flake8==2.2.2
+oauth2==1.5.211
+pytest-cov==1.6
 pytest-django==2.6
 pytest==2.5.2
-pytest-cov==1.6
-flake8==2.2.2

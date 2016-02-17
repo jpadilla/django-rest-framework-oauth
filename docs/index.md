@@ -17,9 +17,9 @@ OAuth support for Django REST Framework
 
 ## Overview
 
-OAuth support extracted as a third party package directly from the official Django REST Framework implementation. It's built using the [django-oauth-plus][django-oauth-plus] and [django-oauth2-provider][django-oauth2-provider] packages.
+OAuth support extracted as a third party package directly from the official Django REST Framework implementation. It's built to use the [django-oauth-plus][django-oauth-plus], [oauth2][oauth2], and [django-oauth2-provider][django-oauth2-provider] packages.
 
-This package provides two authentication classes: [OAuthAuthentication][oauth-authentication] and [OAuth2Authentication][oauth2-authentication] and a [TokenHasReadWriteScope][token-has-read-write-scope] permission class.
+This package provides two authentication classes, [OAuthAuthentication][oauth-authentication] and [OAuth2Authentication][oauth2-authentication], and a [TokenHasReadWriteScope][token-has-read-write-scope] permission class.
 
 ## Requirements
 
@@ -29,11 +29,25 @@ This package provides two authentication classes: [OAuthAuthentication][oauth-au
 
 ## Installation
 
-Install using `pip`...
+Install using `pip`:
 
 ```bash
 $ pip install djangorestframework-oauth
 ```
+
+OAuth packages are optional and not installed out of the box. Use of `OAuthAuthentication` requires installation of the `django-oauth-plus` and `oauth2` packages:
+
+```bash
+$ pip install django-oauth-plus oauth2
+```
+
+Use of `OAuth2Authentication` requires installation of `django-oauth2-provider`:
+
+```bash
+$ pip install django-oauth2-provider
+```
+
+Use of `TokenHasReadWriteScope` requires installation of either `django-oauth-plus` or `django-oauth2-provider`.
 
 ## Documentation & Support
 
@@ -46,7 +60,6 @@ You may also want to follow the [author][jpadilla] on Twitter.
 Install testing requirements.
 
 ```bash
-$ pip install -r requirements.txt
 $ pip install -r requirements-test.txt
 ```
 
@@ -87,5 +100,6 @@ $ mkdocs build
 [oauth2-authentication]: authentication.md#oauth2authentication
 [token-has-read-write-scope]: permissions.md#tokenhasreadwritescope
 [django-oauth-plus]: http://code.larlet.fr/django-oauth-plus/wiki/Home
+[oauth2]: https://github.com/joestump/python-oauth2
 [django-oauth2-provider]: http://django-oauth2-provider.readthedocs.org/
 [jpadilla]: https://twitter.com/jpadilla_
