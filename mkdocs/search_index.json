@@ -1,0 +1,104 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "REST Framework OAuth\n\n\nOAuth support for Django REST Framework\n\n\n\n\nOverview\n\n\nOAuth support extracted as a third party package directly from the official Django REST Framework implementation. It's built to use the \ndjango-oauth-plus\n, \noauth2\n, and \ndjango-oauth2-provider\n packages.\n\n\nThis package provides two authentication classes, \nOAuthAuthentication\n and \nOAuth2Authentication\n, and a \nTokenHasReadWriteScope\n permission class.\n\n\nRequirements\n\n\n\n\nPython 2.7\n\n\nDjango (1.6, 1.7)\n\n\nDjango REST Framework (2.4.3, 2.4.4, 3.0-beta)\n\n\n\n\nInstallation\n\n\nInstall using \npip\n:\n\n\n$ pip install djangorestframework-oauth\n\n\n\n\nOAuth packages are optional and not installed out of the box. Use of \nOAuthAuthentication\n requires installation of the \ndjango-oauth-plus\n and \noauth2\n packages:\n\n\n$ pip install django-oauth-plus oauth2\n\n\n\n\nUse of \nOAuth2Authentication\n requires installation of \ndjango-oauth2-provider\n:\n\n\n$ pip install django-oauth2-provider\n\n\n\n\nUse of \nTokenHasReadWriteScope\n requires installation of either \ndjango-oauth-plus\n or \ndjango-oauth2-provider\n.\n\n\nDocumentation \n Support\n\n\nFull documentation for the project is available at http://jpadilla.github.io/django-rest-framework-oauth/.\n\n\nYou may also want to follow the \nauthor\n on Twitter.\n\n\nTesting\n\n\nInstall testing requirements.\n\n\n$ pip install -r requirements.txt\n\n\n\n\nRun with runtests.\n\n\n$ ./runtests.py\n\n\n\n\nYou can also use the excellent \ntox\n testing tool to run the tests against all supported versions of Python and Django. Install tox globally, and then simply run:\n\n\n$ tox\n\n\n\n\nDocumentation\n\n\nTo build the documentation, you'll need to install \nmkdocs\n.\n\n\n$ pip install mkdocs\n\n\n\n\nTo preview the documentation:\n\n\n$ mkdocs serve\nRunning at: http://127.0.0.1:8000/\n\n\n\n\nTo build the documentation:\n\n\n$ mkdocs build", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#rest-framework-oauth", 
+            "text": "OAuth support for Django REST Framework", 
+            "title": "REST Framework OAuth"
+        }, 
+        {
+            "location": "/#overview", 
+            "text": "OAuth support extracted as a third party package directly from the official Django REST Framework implementation. It's built to use the  django-oauth-plus ,  oauth2 , and  django-oauth2-provider  packages.  This package provides two authentication classes,  OAuthAuthentication  and  OAuth2Authentication , and a  TokenHasReadWriteScope  permission class.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#requirements", 
+            "text": "Python 2.7  Django (1.6, 1.7)  Django REST Framework (2.4.3, 2.4.4, 3.0-beta)", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "Install using  pip :  $ pip install djangorestframework-oauth  OAuth packages are optional and not installed out of the box. Use of  OAuthAuthentication  requires installation of the  django-oauth-plus  and  oauth2  packages:  $ pip install django-oauth-plus oauth2  Use of  OAuth2Authentication  requires installation of  django-oauth2-provider :  $ pip install django-oauth2-provider  Use of  TokenHasReadWriteScope  requires installation of either  django-oauth-plus  or  django-oauth2-provider .", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#documentation-support", 
+            "text": "Full documentation for the project is available at http://jpadilla.github.io/django-rest-framework-oauth/.  You may also want to follow the  author  on Twitter.", 
+            "title": "Documentation &amp; Support"
+        }, 
+        {
+            "location": "/#testing", 
+            "text": "Install testing requirements.  $ pip install -r requirements.txt  Run with runtests.  $ ./runtests.py  You can also use the excellent  tox  testing tool to run the tests against all supported versions of Python and Django. Install tox globally, and then simply run:  $ tox", 
+            "title": "Testing"
+        }, 
+        {
+            "location": "/#documentation", 
+            "text": "To build the documentation, you'll need to install  mkdocs .  $ pip install mkdocs  To preview the documentation:  $ mkdocs serve\nRunning at: http://127.0.0.1:8000/  To build the documentation:  $ mkdocs build", 
+            "title": "Documentation"
+        }, 
+        {
+            "location": "/authentication/", 
+            "text": "Authentication\n\n\nOAuthAuthentication\n\n\nThis authentication uses \nOAuth 1.0a\n authentication scheme. OAuth 1.0a provides signature validation which provides a reasonable level of security over plain non-HTTPS connections. However, it may also be considered more complicated than OAuth2, as it requires clients to sign their requests.\n\n\nThis authentication class depends on the \ndjango-oauth-plus\n and \noauth2\n packages. In order to make it work you must install these packages and add \noauth_provider\n to your \nINSTALLED_APPS\n:\n\n\nINSTALLED_APPS = (\n    ...\n    `oauth_provider`,\n)\n\n\n\nDon't forget to run \nsyncdb\n once you've added the package.\n\n\npython manage.py syncdb\n\n\n\nGetting started with django-oauth-plus\n\n\nThe OAuthAuthentication class only provides token verification and signature validation for requests. It doesn't provide authorization flow for your clients. You still need to implement your own views for accessing and authorizing tokens.\n\n\nThe \ndjango-oauth-plus\n package provides simple foundation for classic 'three-legged' oauth flow. Please refer to \nthe documentation\n for more details.\n\n\nOAuth2Authentication\n\n\nThis authentication uses \nOAuth 2.0\n authentication scheme. OAuth2 is more simple to work with than OAuth1, and provides much better security than simple token authentication. It is an unauthenticated scheme, and requires you to use an HTTPS connection.\n\n\nThis authentication class depends on the \ndjango-oauth2-provider\n project. In order to make it work you must install this package and add \nprovider\n and \nprovider.oauth2\n to your \nINSTALLED_APPS\n:\n\n\nINSTALLED_APPS = (\n    ...\n    'provider',\n    'provider.oauth2',\n)\n\n\n\nThen add \nOAuth2Authentication\n to your global \nDEFAULT_AUTHENTICATION\n setting:\n\n\n'DEFAULT_AUTHENTICATION_CLASSES': (\n    'rest_framework.authentication.OAuth2Authentication',\n),\n\n\n\nYou must also include the following in your root \nurls.py\n module:\n\n\nurl(r'^oauth2/', include('provider.oauth2.urls', namespace='oauth2')),\n\n\n\nNote that the \nnamespace='oauth2'\n argument is required.\n\n\nFinally, sync your database.\n\n\npython manage.py syncdb\npython manage.py migrate\n\n\n\n\n\nNote:\n If you use \nOAuth2Authentication\n in production you must ensure that your API is only available over \nhttps\n.\n\n\n\n\nGetting started with django-oauth2-provider\n\n\nThe \nOAuth2Authentication\n class only provides token verification for requests.  It doesn't provide authorization flow for your clients.\n\n\nThe OAuth 2 authorization flow is taken care by the \ndjango-oauth2-provider\n dependency. A walkthrough is given here, but for more details you should refer to \nthe documentation\n.\n\n\nTo get started:\n\n\n1. Create a client\n\n\nYou can create a client, either through the shell, or by using the Django admin.\n\n\nGo to the admin panel and create a new \nProvider.Client\n entry. It will create the \nclient_id\n and \nclient_secret\n properties for you.\n\n\n2. Request an access token\n\n\nTo request an access token, submit a \nPOST\n request to the url \n/oauth2/access_token\n with the following fields:\n\n\n\n\nclient_id\n the client id you've just configured at the previous step.\n\n\nclient_secret\n again configured at the previous step.\n\n\nusername\n the username with which you want to log in.\n\n\npassword\n well, that speaks for itself.\n\n\n\n\nYou can use the command line to test that your local configuration is working:\n\n\ncurl -X POST -d \"client_id=YOUR_CLIENT_ID\nclient_secret=YOUR_CLIENT_SECRET\ngrant_type=password\nusername=YOUR_USERNAME\npassword=YOUR_PASSWORD\" http://localhost:8000/oauth2/access_token/\n\n\n\nYou should get a response that looks something like this:\n\n\n{\"access_token\": \"\nyour-access-token\n\", \"scope\": \"read\", \"expires_in\": 86399, \"refresh_token\": \"\nyour-refresh-token\n\"}\n\n\n\n3. Access the API\n\n\nThe only thing needed to make the \nOAuth2Authentication\n class work is to insert the \naccess_token\n you've received in the \nAuthorization\n request header.\n\n\nThe command line to test the authentication looks like:\n\n\ncurl -H \"Authorization: Bearer \nyour-access-token\n\" http://localhost:8000/api/", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/authentication/#authentication", 
+            "text": "", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/authentication/#oauthauthentication", 
+            "text": "This authentication uses  OAuth 1.0a  authentication scheme. OAuth 1.0a provides signature validation which provides a reasonable level of security over plain non-HTTPS connections. However, it may also be considered more complicated than OAuth2, as it requires clients to sign their requests.  This authentication class depends on the  django-oauth-plus  and  oauth2  packages. In order to make it work you must install these packages and add  oauth_provider  to your  INSTALLED_APPS :  INSTALLED_APPS = (\n    ...\n    `oauth_provider`,\n)  Don't forget to run  syncdb  once you've added the package.  python manage.py syncdb", 
+            "title": "OAuthAuthentication"
+        }, 
+        {
+            "location": "/authentication/#getting-started-with-django-oauth-plus", 
+            "text": "The OAuthAuthentication class only provides token verification and signature validation for requests. It doesn't provide authorization flow for your clients. You still need to implement your own views for accessing and authorizing tokens.  The  django-oauth-plus  package provides simple foundation for classic 'three-legged' oauth flow. Please refer to  the documentation  for more details.", 
+            "title": "Getting started with django-oauth-plus"
+        }, 
+        {
+            "location": "/authentication/#oauth2authentication", 
+            "text": "This authentication uses  OAuth 2.0  authentication scheme. OAuth2 is more simple to work with than OAuth1, and provides much better security than simple token authentication. It is an unauthenticated scheme, and requires you to use an HTTPS connection.  This authentication class depends on the  django-oauth2-provider  project. In order to make it work you must install this package and add  provider  and  provider.oauth2  to your  INSTALLED_APPS :  INSTALLED_APPS = (\n    ...\n    'provider',\n    'provider.oauth2',\n)  Then add  OAuth2Authentication  to your global  DEFAULT_AUTHENTICATION  setting:  'DEFAULT_AUTHENTICATION_CLASSES': (\n    'rest_framework.authentication.OAuth2Authentication',\n),  You must also include the following in your root  urls.py  module:  url(r'^oauth2/', include('provider.oauth2.urls', namespace='oauth2')),  Note that the  namespace='oauth2'  argument is required.  Finally, sync your database.  python manage.py syncdb\npython manage.py migrate   Note:  If you use  OAuth2Authentication  in production you must ensure that your API is only available over  https .", 
+            "title": "OAuth2Authentication"
+        }, 
+        {
+            "location": "/authentication/#getting-started-with-django-oauth2-provider", 
+            "text": "The  OAuth2Authentication  class only provides token verification for requests.  It doesn't provide authorization flow for your clients.  The OAuth 2 authorization flow is taken care by the  django-oauth2-provider  dependency. A walkthrough is given here, but for more details you should refer to  the documentation .  To get started:", 
+            "title": "Getting started with django-oauth2-provider"
+        }, 
+        {
+            "location": "/authentication/#1-create-a-client", 
+            "text": "You can create a client, either through the shell, or by using the Django admin.  Go to the admin panel and create a new  Provider.Client  entry. It will create the  client_id  and  client_secret  properties for you.", 
+            "title": "1. Create a client"
+        }, 
+        {
+            "location": "/authentication/#2-request-an-access-token", 
+            "text": "To request an access token, submit a  POST  request to the url  /oauth2/access_token  with the following fields:   client_id  the client id you've just configured at the previous step.  client_secret  again configured at the previous step.  username  the username with which you want to log in.  password  well, that speaks for itself.   You can use the command line to test that your local configuration is working:  curl -X POST -d \"client_id=YOUR_CLIENT_ID client_secret=YOUR_CLIENT_SECRET grant_type=password username=YOUR_USERNAME password=YOUR_PASSWORD\" http://localhost:8000/oauth2/access_token/  You should get a response that looks something like this:  {\"access_token\": \" your-access-token \", \"scope\": \"read\", \"expires_in\": 86399, \"refresh_token\": \" your-refresh-token \"}", 
+            "title": "2. Request an access token"
+        }, 
+        {
+            "location": "/authentication/#3-access-the-api", 
+            "text": "The only thing needed to make the  OAuth2Authentication  class work is to insert the  access_token  you've received in the  Authorization  request header.  The command line to test the authentication looks like:  curl -H \"Authorization: Bearer  your-access-token \" http://localhost:8000/api/", 
+            "title": "3. Access the API"
+        }, 
+        {
+            "location": "/permissions/", 
+            "text": "Permissions\n\n\nTokenHasReadWriteScope\n\n\nThis permission class is intended for use with either of the \nOAuthAuthentication\n and \nOAuth2Authentication\n classes, and ties into the scoping that their backends provide.\n\n\nRequests with a safe methods of \nGET\n, \nOPTIONS\n or \nHEAD\n will be allowed if the authenticated token has read permission.\n\n\nRequests for \nPOST\n, \nPUT\n, \nPATCH\n and \nDELETE\n will be allowed if the authenticated token has write permission.\n\n\nThis permission class relies on the implementations of the \ndjango-oauth-plus\n and \ndjango-oauth2-provider\n libraries, which both provide limited support for controlling the scope of access tokens:\n\n\n\n\ndjango-oauth-plus\n: Tokens are associated with a \nResource\n class which has a \nname\n, \nurl\n and \nis_readonly\n properties.\n\n\ndjango-oauth2-provider\n: Tokens are associated with a bitwise \nscope\n attribute, that defaults to providing bitwise values for \nread\n and/or \nwrite\n.\n\n\n\n\nIf you require more advanced scoping for your API, such as restricting tokens to accessing a subset of functionality of your API then you will need to provide a custom permission class.  See the source of the \ndjango-oauth-plus\n or \ndjango-oauth2-provider\n package for more details on scoping token access.", 
+            "title": "Permissions"
+        }, 
+        {
+            "location": "/permissions/#permissions", 
+            "text": "", 
+            "title": "Permissions"
+        }, 
+        {
+            "location": "/permissions/#tokenhasreadwritescope", 
+            "text": "This permission class is intended for use with either of the  OAuthAuthentication  and  OAuth2Authentication  classes, and ties into the scoping that their backends provide.  Requests with a safe methods of  GET ,  OPTIONS  or  HEAD  will be allowed if the authenticated token has read permission.  Requests for  POST ,  PUT ,  PATCH  and  DELETE  will be allowed if the authenticated token has write permission.  This permission class relies on the implementations of the  django-oauth-plus  and  django-oauth2-provider  libraries, which both provide limited support for controlling the scope of access tokens:   django-oauth-plus : Tokens are associated with a  Resource  class which has a  name ,  url  and  is_readonly  properties.  django-oauth2-provider : Tokens are associated with a bitwise  scope  attribute, that defaults to providing bitwise values for  read  and/or  write .   If you require more advanced scoping for your API, such as restricting tokens to accessing a subset of functionality of your API then you will need to provide a custom permission class.  See the source of the  django-oauth-plus  or  django-oauth2-provider  package for more details on scoping token access.", 
+            "title": "TokenHasReadWriteScope"
+        }
+    ]
+}
