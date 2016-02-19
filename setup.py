@@ -14,7 +14,6 @@ url = 'https://github.com/jpadilla/django-rest-framework-oauth'
 author = 'José Padilla'
 author_email = 'hello@jpadilla.com'
 license = 'BSD'
-install_requires = open('requirements.txt').read().split('\n')
 
 
 # This command has been borrowed from
@@ -88,7 +87,6 @@ setup(
     packages=get_packages(package),
     package_data=get_package_data(package),
     cmdclass={'test': PyTest},
-    install_requires=install_requires,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
